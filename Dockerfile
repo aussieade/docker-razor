@@ -2,6 +2,8 @@
 
 FROM centos:centos6.6
 
+MAINTAINER aussieade
+
 COPY install.pp /root/install.pp
 COPY start.sh /root/start.sh
 
