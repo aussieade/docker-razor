@@ -9,8 +9,9 @@ COPY start.sh /root/start.sh
 
 RUN yum -y update && \
     rpm -ivh https://yum.puppetlabs.com/el/6/products/x86_64/puppetlabs-release-6-11.noarch.rpm && \
-    yum install -y puppet tar razor-server && \
+    yum install -y puppet tar razor-server ipmitool && \
     puppet module install puppetlabs/postgresql && \
+    yum clean all && \
     chmod 750 /root/start.sh
 
 ENV  HOSTNAME       razor-server
